@@ -1,0 +1,11 @@
+{
+  "events": {
+    "start": "echo 'Nodemon started'",
+    "restart": "echo 'Nodemon restarted due to changes'",
+    "events": {
+      "crash": "echo 'App crashed. Checking for port conflicts...' && netstat -ano | findstr :7000 && for /f \"tokens=5\" %a in ('netstat -ano ^| findstr :7000') do taskkill //PID %a //F && npm run dev || echo 'No process using port 7000'"
+    },
+
+    "exit": "echo 'Nodemon exited'"
+  }
+}
