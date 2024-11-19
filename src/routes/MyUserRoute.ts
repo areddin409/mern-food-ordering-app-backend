@@ -5,7 +5,8 @@ import { validateMyUserRequest } from "../middleware/validation";
 
 const router = express.Router();
 
-// /api/my/user
+// GET /api/my/user
+// Retrieves the current user information
 router.get(
   "/",
   jwtCheck,
@@ -19,6 +20,8 @@ router.get(
   },
 );
 
+// POST /api/my/user
+// Creates a new user
 router.post(
   "/",
   jwtCheck,
@@ -31,6 +34,8 @@ router.post(
   },
 );
 
+// PUT /api/my/user
+// Updates the current user information
 router.put(
   "/",
   jwtCheck,
